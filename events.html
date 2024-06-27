@@ -1,0 +1,186 @@
+<!-- <button onclick="buttonClicked()">Click</button>
+
+<script>
+    function buttonClicked() {
+        console.log("Hello")
+        alert("Hello")
+    }
+</script> -->
+
+<!-- <head>
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="buttonClicked()">Click</button>
+
+    <script>
+        var b = document.querySelector("body");
+        function buttonClicked() {
+            b.style.backgroundColor="red"
+        }
+    </script>
+</body>
+
+</html> -->
+
+<!-- <body onkeypress="keypressed(event)">
+    
+</body>
+
+<script>
+    function keypressed(event){
+        alert(event.key)
+    }
+</script> -->
+
+<!-- <body onkeypress="clicked(event)">
+    
+</body>
+
+<script>
+    function clicked(event){
+        console.log(event.target)
+    }
+</script> -->
+
+<!-- <button onclick="clicked(event)">button 1</button>
+<button onclick="clicked(event)">button 2</button>
+<button onclick="clicked(event)">button 3</button>
+
+<script>
+    function clicked(event){
+        console.log(event.target.textContent)
+        alert(event.target.textContent)
+    }
+</script> -->
+
+<!-- <input type="text" placeholder="number 1" id="num1">
+<br>
+<input type="text" placeholder="number 2" id="num2">
+<br>
+<button id="btn" onclick="add()">Add</button>
+<h1 id="result">Result is:</h1>
+
+<script>
+    var num1 = document.getElementById("num1")
+    var num2 = document.getElementById("num2")
+    var result = document.getElementById("result")
+
+    function add() {
+        var ans = Number(num1.value) + Number(num2.value)
+        result.textContent = "Result is:" + ans
+
+    }
+</script> -->
+
+<!-- <input type="text" placeholder="enter text" id="inputbox" onkeyup="update()">
+<br>
+<h1 id="result"></h1>
+
+<script>
+    var inputbox = document.getElementById("inputbox")
+    var result = document.getElementById("result")
+
+    function update() {
+        result.textContent = inputbox.value
+
+    }
+</script> -->
+
+<!-- <button class="btn">Click</button>
+
+<script>
+    var btn = document.querySelector(".btn")
+    btn.addEventListener("click", function(){
+        alert("Hello")
+    })
+</script> -->
+
+<!-- <style>
+    .red{
+        background-color: red;
+        height: 150px;
+        width: 150px;
+
+    }
+    .black{
+        background-color: black;
+        height: 150px;
+        width: 150px;
+
+    }
+</style>
+
+<div class="red"></div>
+<br>
+<button id="btn1">Add black color</button>
+<br>
+<button id="btn2">Remove black color</button>
+
+<script>
+    var d = document.querySelector(".red")
+    var btn1 = document.getElementById("btn1")
+    var btn2 = document.getElementById("btn2")
+    btn1.addEventListener("click", function(){
+        d.classList.add("black")
+    })
+    btn2.addEventListener("click", function(){
+        d.classList.remove("black")
+    })
+</script> -->
+
+<style>
+    .popup {
+        background-color: black;
+        padding: 15px;
+        width: 150px;
+        color: white;
+        margin-left: 500px;
+        margin-top: 100px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .overlay {
+        background-color: black;
+        opacity: 0.5;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+
+<button id="btn">Click</button>
+
+<div class="overlay hidden"></div>
+<div class="popup hidden">
+    <p style="text-align:  right; cursor: pointer;" id="close">X</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ab, modi dolore impedit numquam facilis enim
+        similique, rerum error possimus repudiandae eveniet, atque architecto labore eaque harum a in commodi?</p>
+</div>
+
+<script>
+    var popup = document.querySelector(".popup")
+    var button = document.getElementById("btn")
+    var close = document.getElementById("close")
+    var overlay = document.querySelector(".overlay")
+    
+    button.addEventListener("click", function () {
+        popup.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+
+    })
+
+    close.addEventListener("click", function () {
+        popup.classList.add("hidden")
+        overlay.classList.add("hidden")
+
+    })
+</script>

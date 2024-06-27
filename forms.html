@@ -1,0 +1,128 @@
+<!-- <div>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <h1 id="result">Male/Female</h1>
+</div>
+
+<script>
+    var radio = document.getElementsByName("gender")
+    var result = document.getElementById("result")
+
+    radio[0].addEventListener("click", function () {
+        result.textContent = event.target.value
+    })
+
+    radio[1].addEventListener("click", function () {
+        result.textContent = event.target.value
+    })
+
+    for (count=0;count<2;count++) {
+
+        radio[count].addEventListener("click", function () {
+            result.textContent = event.target.value
+        })
+
+    }
+</script> -->
+
+<!-- <div>
+    <input type="checkbox" name="check" value="c++"> c++
+    <input type="checkbox" name="check" value="java"> java
+    <input type="checkbox" name="check" value="python"> python
+</div>
+
+<h1 id="result"></h1>
+
+<script>
+    var check = document.getElementsByName("check")
+    var result = document.getElementById("result")
+    skill = []
+
+    for (count = 0; count < check.length; count++) {
+        check[count].addEventListener("click", function () {
+            if (event.target.checked) {
+                skill.push(event.target.value)
+                result.textContent = skill
+            }
+            else {
+                var index = skill.indexOf(event.target.value)
+                skill.splice(index, 1)
+                result.textContent = skill
+            }
+
+        })
+    }
+
+
+</script> -->
+
+<style>
+    .nameerror,
+    .emailerror,
+    .mobileerror {
+        color: red;
+        display: none;
+    }
+</style>
+
+<div>
+    <form>
+        <input type="text" placeholder="Name" id="name">
+        <span class="nameerror">Name must contains only letter</span>
+        <br>
+        <input type="text" placeholder="Email" id="email">
+        <span class="emailerror">Provide valid email address</span>
+        <br>
+        <input type="text" placeholder="Mobile" id="mobile">
+        <span class="mobileerror">Mobile must contain 10 digits</span>
+        <br>
+        <input type="submit" id="submit">
+    </form>
+</div>
+
+<script>
+    var submit = document.getElementById("submit")
+
+    submit.addEventListener("click", function () {
+        event.preventDefault()
+
+        var nameregex = /^[a-zA-Z]+$/
+        var emailregex = /^[a-zA-Z0-9]+@gmail\.com/
+        var mobileregex = /^\d{10}$/
+
+        var name = document.getElementById("name")
+        var email = document.getElementById("email")
+        var mobile = document.getElementById("mobile")
+
+        var validate = true
+
+        if (nameregex.test(name.value) == false) {
+            document.querySelector(".nameerror").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".nameerror").style.display = "none"
+        }
+
+        if (emailregex.test(email.value) == false) {
+            document.querySelector(".emailerror").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".emailerror").style.display = "none"
+        }
+
+        if (mobileregex.test(mobile.value) == false) {
+            document.querySelector(".mobileerror").style.display = "inline"
+            validate = false
+        }
+        else {
+            document.querySelector(".mobileerror").style.display = "none"
+        }
+
+        if (validate == true) {
+            alert("Form submitted successfully")
+        }
+
+    })
+</script>
